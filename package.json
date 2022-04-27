@@ -1,0 +1,30 @@
+{
+  "name": "03",
+  "version": "1.0.0",
+  "description": "Projeto To Do List - Back-end CRUD MongoDB Atlas + Documentação com Swagger + Deploy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexandreSilvestre21/Blue-BackEnd-C012_Projeto03.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexandreSilvestre21/Blue-BackEnd-C012_Projeto03/issues"
+  },
+  "homepage": "https://github.com/AlexandreSilvestre21/Blue-BackEnd-C012_Projeto03#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.0",
+    "mongoose": "^6.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
