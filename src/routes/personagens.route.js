@@ -1,13 +1,11 @@
-const express = require('express');
-const router = express.Router();
+const route = require('express').Router();
+const controllerPersonagens = require('../controllers/personagens.controller');
+const { validId, validObjectBody } = require('../middlewares/personagem.middleware');
 
-const personagensController = require('../controllers/personagens.controller');
+route.get('/all-personagens', controllerPersonagens.findAllPersonagensController);
+route.get('/one-personagem/:id', validId, controllerPersonagens.findByIdPersonagemController);
+route.post('/create-personagem', validObjectBody, controllerPersonagens.createPersonagemController);
+route.put('/update-personagem/:id',validId, validObjectBody, controllerPersonagens.updatePersonagemController);
+route.delete('/delete-personagem/:id', validId, controllerPersonagens.deletePersonagemController);
 
-router.get('/find-personagens', personagensController.findPersonagensController);
-router.get('/find-personagem/:id', personagensController.findPersonagemByIdController);
-router.post('/create', personagensController.createPersonagemController);
-router.put('/update/:id', personagensController.updatePersonagemController);
-router.delete('/delete/:id', personagensController.deletePersonagemController);
-
-module.exports = router;
-
+module.exports = route;
