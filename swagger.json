@@ -5,17 +5,17 @@
     "description": "API para CRUD de personagens da animação Rick and Morty",
     "termsOfService": "",
     "contact": {
-      "email": "diegofreitas50@hotmail.com"
+      "email": "asilvestre786@gmail.com"
     },
     "version": "1.0.0"
   },
   "servers": [
     {
-      "url": "https://api-rickandmorty-mod3blue.onrender.com/characters",
+      "url": "https://api-personagens.onrender.com/personagens",
       "description": "API de produção"
     },
     {
-      "url": "http://localhost:3000/characters",
+      "url": "http://localhost:3000/personagens",
       "description": "API de teste"
     }
   ],
@@ -195,41 +195,8 @@
           }
         }
       }
-    },
-    "/search/{nome}": {
-      "get": {
-        "summary": "Busca um personagem pelo nome",
-        "description": "Rota responsável por buscar um personagem pelo nome",
-        "tags": ["Personagens"],
-        "parameters": [
-          {
-            "name": "nome",
-            "in": "path",
-            "description": "Nome do personagem para a busca",
-            "required": true
-          }
-        ],
-        "responses": {
-          "400": {
-            "description": "Bad Request"
-          },
-          "404": {
-            "description": "Not Found"
-          },
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "$ref": "#/components/schemas/Personagem"
-                }
-              }
-            }
-          }
-        }
-      }
     }
+   
   },
   "components": {
     "schemas": {
