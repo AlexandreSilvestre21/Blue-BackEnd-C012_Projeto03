@@ -32,7 +32,7 @@
                 "$ref": "#/components/schemas/Personagem"
               },
               "examples": {
-                "Paletas": {
+                "Personagens": {
                   "value": {
                     "nome": "Rick",
                     "imagem": "https://rickandmortyapi.com/api/character/avatar/292.jpeg"
@@ -139,7 +139,7 @@
                 "$ref": "#/components/schemas/Personagem"
               },
               "examples": {
-                "Paletas": {
+                "Personagens": {
                   "value": {
                     "nome": "Rick",
                     "imagem": "https://rickandmortyapi.com/api/character/avatar/292.jpeg"
