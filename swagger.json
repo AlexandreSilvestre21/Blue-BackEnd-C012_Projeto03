@@ -1,13 +1,249 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "API Personagens",
-    "description": "API para CRUD de personagens da série Rick e Morty",
+    "title": "API Rick and Morty",
+    "description": "API para CRUD de personagens da animação Rick and Morty",
     "termsOfService": "",
     "contact": {
-      "email": "asilvestre786@gmail.com"
+      "email": "diegofreitas50@hotmail.com"
     },
     "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api-rickandmorty-mod3blue.onrender.com/characters",
+      "description": "API de produção"
+    },
+    {
+      "url": "http://localhost:3000/characters",
+      "description": "API de teste"
+    }
+  ],
+  "paths": {
+    "/create": {
+      "post": {
+        "summary": "Cadastrar um personagem",
+        "description": "Rota responsável por cadastrar um personagem",
+        "tags": ["Personagens"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Personagem"
+              },
+              "examples": {
+                "Paletas": {
+                  "value": {
+                    "nome": "Rick",
+                    "imagem": "https://rickandmortyapi.com/api/character/avatar/292.jpeg"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Personagem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "summary": "Lista de todos os personagens",
+        "description": "Rota responsável por listar todos os personagens",
+        "tags": ["Personagens"],
+        "responses": {
+          "404": {
+            "description": "Not Found"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Personagem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/find/{id}": {
+      "get": {
+        "summary": "Busca um personagem pelo ID",
+        "description": "Rota responsável por buscar um personagem pelo ID",
+        "tags": ["Personagens"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id do personagem para a busca",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Personagem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/update/{id}": {
+      "put": {
+        "summary": "Editar um personagem pelo ID",
+        "description": "Rota responsável por editar um personagem pelo ID",
+        "tags": ["Personagens"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id do personagem para a busca",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Personagem"
+              },
+              "examples": {
+                "Paletas": {
+                  "value": {
+                    "nome": "Rick",
+                    "imagem": "https://rickandmortyapi.com/api/character/avatar/292.jpeg"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Personagem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/delete/{id}": {
+      "delete": {
+        "summary": "Apagar um personagem pelo ID",
+        "description": "Rota responsável por apagar um personagem pelo ID",
+        "tags": ["Personagens"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id do personagem para deleção",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/search/{nome}": {
+      "get": {
+        "summary": "Busca um personagem pelo nome",
+        "description": "Rota responsável por buscar um personagem pelo nome",
+        "tags": ["Personagens"],
+        "parameters": [
+          {
+            "name": "nome",
+            "in": "path",
+            "description": "Nome do personagem para a busca",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Personagem"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Personagem": {
+        "type": "object",
+        "properties": {
+          "nome": {
+            "type": "string"
+          },
+          "imagem": {
+            "type": "string"
+          }
+        }
+      }
+    }
   }
 }
-
