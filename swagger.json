@@ -20,7 +20,7 @@
     }
   ],
   "paths": {
-    "/create": {
+    "/create-personagem": {
       "post": {
         "summary": "Cadastrar um personagem",
         "description": "Rota responsável por cadastrar um personagem",
@@ -60,7 +60,7 @@
         }
       }
     },
-    "/": {
+    "/all-personagens": {
       "get": {
         "summary": "Lista de todos os personagens",
         "description": "Rota responsável por listar todos os personagens",
@@ -85,7 +85,7 @@
         }
       }
     },
-    "/find/{id}": {
+    "/one-personagem/{id}": {
       "get": {
         "summary": "Busca um personagem pelo ID",
         "description": "Rota responsável por buscar um personagem pelo ID",
@@ -119,7 +119,7 @@
         }
       }
     },
-    "/update/{id}": {
+    "/update-personagem/{id}": {
       "put": {
         "summary": "Editar um personagem pelo ID",
         "description": "Rota responsável por editar um personagem pelo ID",
@@ -170,7 +170,7 @@
         }
       }
     },
-    "/delete/{id}": {
+    "/delete-personagem/{id}": {
       "delete": {
         "summary": "Apagar um personagem pelo ID",
         "description": "Rota responsável por apagar um personagem pelo ID",
