@@ -9,3 +9,9 @@ Permitindo: leitura, criação, edição, busca e exclusão dos personagens atra
 O deploy se encontra no servidor Render e é possível acessá-lo aqui: https://personagens.onrender.com/personagens/api-docs/
 
 
+🛠️ Principais ferramentas:
+NodeJS - Engine
+JavaScript - Language
+Express -Framework
+MongoDB - DataBase
+Swagger - documentation / API
