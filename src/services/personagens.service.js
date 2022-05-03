@@ -1,11 +1,11 @@
 const Personagem = require('../models/Personagem');
 
-const findPersonagensService = async () => {
+const findAllPersonagensService = async () => {
   const personagem = await Personagem.find();
   return personagem;
 };
 
-const findPersonagemByIdService = async (id) => {
+const findByIdPersonagemService = async (id) => {
   const personagem = await Personagem.findById(id);
   return personagem;
 };
@@ -25,8 +25,8 @@ const deletePersonagemService = async (id) => {
 };
 
 module.exports = {
-  findPersonagensService,
-  findPersonagemByIdService,
+  findAllPersonagensService,
+  findByIdPersonagemService,
   createPersonagemService,
   updatePersonagemService,
   deletePersonagemService,

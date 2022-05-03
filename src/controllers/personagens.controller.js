@@ -2,7 +2,7 @@ const personagensService = require('../services/personagens.service');
 const mongoose = require('mongoose');
 
 const findAllPersonagensController = async (req, res) => {
-  const allPersonagens = await persoangensService.findAllPersonagensService();
+  const allPersonagens = await personagensService.findAllPersonagensService();
   if (allPersonagens.length == 0) {
     return res
       .status(404)
